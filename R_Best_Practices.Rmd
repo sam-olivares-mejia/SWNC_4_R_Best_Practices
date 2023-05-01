@@ -1,0 +1,23 @@
+---
+title: "R Best Practices"
+author: "Sam Olivares-Mejia"
+date: "2023-05-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Best Practices 
+
+Today's R session is going to be a review of best practices when working on a project in R. This is meant to serve as both an overview of the purpose and benefits of R, with a technical deep dive on iterations at the end. 
+
+Agenda: 
+1. Why R? 
+2. Best Practices Principles 
+3. Version control 
+4. Object Oriented Programming 
+5. Functional Programming 
+6. Iterations 
+

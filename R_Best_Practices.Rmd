@@ -9,15 +9,95 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# R Best Practices 
+# R Best Practices {.tabset .tabset-pills}
 
-Today's R session is going to be a review of best practices when working on a project in R. This is meant to serve as both an overview of the purpose and benefits of R, with a technical deep dive on iterations at the end. 
+Today we will be de-bunking coding myths and misconceptions. 
+
+![](images/Mythbusters.jpg)
+
+You may have previously thought one of the following: 
+
+"Why am I doing this??"
+
+"I keep getting errors and I don't know why!!"
+
+"How did they know the answer to that?" 
+
+"Where do I even begin?!?"
+
+If you've said these to yourself or have felt similar  emotions of frustration towards coding, this training is for YOU!! 
+
+In today's session we will cover the purpose and benefits of R, debunk common coding myths, and equip you with a tool belt of resources for success!
+
+Towards the end, we will dive deeper into ways to optimize your code via functional programming and iterations. 
 
 Agenda: 
 1. Why R? 
-2. Best Practices Principles 
-3. Version control 
-4. Object Oriented Programming 
+2. Debunking Common Coding Myths 
+3. Best Practices Principles 
+4. Problem Solving Workflow 
 5. Functional Programming 
-6. Iterations 
+6. Iterations Expansion 
 
+
+</br>
+
+
+## 1. Why R? 
+
+"Why am I doing this??"
+
+- quick review from the 1st session 
+
+## 2. Debunking Common Coding Myths 
+
+![](images/MythbustersLogo.jpg)
+
+"I keep getting errors and I don't know why!!"
+
+- I got a warning in bright red text, my code must be ruined
+
+- coders like Sam and Laura know the answers off the top of their head 
+
+
+## 3. Best Practices Principles 
+
+But I still feel like I don't know anything!!! My computer is going to explode!! 
+![](images/ComputerFire.jpg) 
+Just Remember... 
+![](images/SmokeyTheBear.jpg)
+Let's go over coding best practices and build your tool belt for success! 
+
+"How did they know the answer to that?" 
+
+- utilize your resources
+    - stack overflow 
+    - help files 
+    - pair programming 
+- documentation and version control (Even if you're working by yourself)
+    - Comments 
+    - GitHub Repository!!! (stage commit push pull!)
+- Reducing...
+    - Repetitive code (pipeline, functional programming)
+    - Bad variable names 
+    - Complicating code 
+- Take breaks and have fun !!!
+
+
+Amazing work! We've built our toolbelt of success and are ready to start coding! 
+![](images/RobTheBuilder.jpg) 
+
+## 4. Problem Solving Workflow 
+
+"Where do I even begin?!?"
+
+![](images/Lost.jpg)
+
+- Building a road map to success 
+
+
+
+Now you have both the tools and the roadmap to success!! 
+
+## 5. Functional Programming 
+## 6. Iterations Expansion 

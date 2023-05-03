@@ -172,7 +172,17 @@ Similarly, version control like GitHub allows you to go back in time, which allo
 The next task is for those who have had experience using GitHub. If you haven't gone over our GitHub training yet or need a refresher, come back to this section once you've completed that training. We will go over this during today's session so that it can be a reference in the recording, but don't worry if this all seems new to you right now.  
 
 **To Do**: Go to this training GitHub Repository, and look for the commit that says "code that works for Tool #2" to find the solution to the following broken code.
-
+```{solution}
+# Program to check if the input number is odd or even.
+# A number is even if division by 2 give a remainder of 0.
+# If remainder is 1, it is odd.
+num = as.integer(readline(prompt="Enter a number: "))
+if((num %% 2) == 0) {
+print(paste(num,"is Even"))
+} else {
+print(paste(num,"is Odd"))
+}
+```
 
 - documentation and version control (Even if you're working by yourself)
     - Comments 

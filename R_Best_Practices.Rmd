@@ -92,7 +92,7 @@ R is very particular in its formatting, so something as small as a . or a } can 
 
 **To Do**: Take a look at the code below and try to figure out the issue in each example:
 
-```{example}
+```{r, example}
 
 #example 1 
 letters<- c("R", "C," "B")
@@ -146,7 +146,7 @@ Even better, R also has its own [documentation](https://www.rdocumentation.org/)
 Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
 
 **To Do**: Install and load the 'pkgnet' package 
-```{pkginstall}
+```{r, pkginstall}
 #install.packages('pkgnet')
 library(pkgnet)
 ```
@@ -172,29 +172,63 @@ Similarly, version control like GitHub allows you to go back in time, which allo
 The next task is for those who have had experience using GitHub. If you haven't gone over our GitHub training yet or need a refresher, come back to this section once you've completed that training. We will go over this during today's session so that it can be a reference in the recording, but don't worry if this all seems new to you right now.  
 
 **To Do**: Go to this training GitHub Repository, and look for the commit that says "code that works for Tool #2" to find the solution to the following broken code.
-```{solution}
+```{r}
 # Program to check if the input number is odd or even.
 # A number is even if division by 2 give a remainder of 0.
 # If remainder is 1, it is odd.
 num = as.integer(readline(prompt="Enter a number: "))
 if((num %% 2) == 0) {
-print(paste(num,"is Even"))
-} else {
-print(paste(num,"is Odd"))
+print(paste(num))
+ else {
+print(paste(num))
 }
 ```
+### Tool #3: Reduce, Reuse, Recycle 
 
-- documentation and version control (Even if you're working by yourself)
-    - Comments 
-    - GitHub Repository!!! (stage commit push pull!)
+Just like the earth, we want to keep our code as clean as possible! 
 
 
-- Reducing...
-    - Bad variable names 
-    - Complicating code 
-"I feel like I've written the same thing over and over again"  
-    - Repetitive code (pipeline, functional programming)
-- Take breaks and have fun !!!
+REDUCE: clunky or unorganized code. 
+
+Use variable names that are concise, consistent, unique, and have meaning. Your initial instinct will be to name variables as quickly as possible, but just remember that you're communicating to both your future self AND future users. For a deep dive on naming conventions, visit Programming Duck's [ultimate guide and reference](https://programmingduck.com/articles/naming).
+
+**To Do**: Rename the column names in the following data frame 
+```{r}
+groceries<- data.frame(
+  FOOD.NAMES=c("potatos", "cereal", "milk"),
+  money.well.spent=c(1.5, 3.40, 3.59),
+  StoreBoughtFrom=c("Safeway", "TraderJoes", "Walmart")
+)
+```
+
+
+REUSE: code that you've used before
+
+Throughout the SWNC R training Series, we have frequently reused code examples from work us and others have done in the past. As long as you understand the code and cite appropriately, code is fair game and its in fact encouraged to reuse code. Remember R is open source and there's no point in re-inventing the wheel!! 
+
+**To Do**: Run the code below adapted from the first data wrangling session to standardize your column names 
+```{r}
+library(janitor)
+groceries_clean <- groceries %>%
+  clean_names()
+```
+
+
+RECYCLE: repetitive code into a pipeline, function, or iteration! 
+
+*"I feel like I've written the same thing over and over again"*  
+
+If you feel like you've been writing the same chunk of code over and over again and only replacing one or two things each time, consider optimizing that code with a pipeline, function or iteration! 
+
+Remember that the pipeline is a great way to reduce repetitive code when applying multiple functions on the same variable: 
+
+![](images\Groundhog_Pipeline.png)
+Similarly, using iteration and creating your own functions are key in optimizing speed, storage, and time when writing code. The last two sections of today's training will be a deep dive on creating functions and iterations(specifically lapply) so stay tuned! 
+
+
+### Bonus Tool: Take breaks and have fun !!!
+
+Code can get annoying at times so remember to take the time to release frustration through breaks! When's the last time you went on a walk or had a snack? Thank your brain and give it a moment to refresh before diving back into your code - often this will lead to new insights when you're stuck on a problem. the nice thing about coding is theres many ways to accomplish the same task so if all else fails take a break and try a new approach!! :)
 
 
 Amazing work! We've built our toolbelt of success and are ready to start coding! 
@@ -202,13 +236,9 @@ Amazing work! We've built our toolbelt of success and are ready to start coding!
 
 ## 4. Problem Solving Workflow 
 
-"Where do I even begin?!?"
+*"Where do I even begin?!?"*
 
-![](images/Lost.jpg)
-
-- Building a road map to success 
-
-
+![](images/Roadmap.png)
 Now you have both the tools and the roadmap to success!! 
 
 ## 5. Functional Programming 

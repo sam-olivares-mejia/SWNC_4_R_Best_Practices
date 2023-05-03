@@ -60,6 +60,8 @@ To review, packages are like the "expansion pack" or "power ups" in R code that 
 
 Packages are constantly being built, updated, and can be adapted based on user needs which meas R is always getting better as time goes forward. There is also a vast world of documentation that if you know how to look for it, allows you to learn as you code. 
 
+Finally, of the largest principles that is important to keep in mind throughout your coding journey is the concept of **Reproducibility**. Ultimately, we want our code and processes to be able to be reproduced over time, by different people, and have it apply to as much data as possible. When following best practices, R can open up a world of possibilities by cutting down the time and effort needed to analyze, process, and visualize our data. 
+
 In today's session we hope to be able to give you the tools to learn from and engage with the coding community in a sustainable manner. We know that like any language, R has a steep learning curve to it, so we want to break down as many barriers as we can for you to succeed. 
 
 
@@ -242,10 +244,74 @@ Amazing work! We've built our toolbelt of success and are ready to start coding!
 Now you have both the tools and the roadmap to success!! 
 
 ## 5. Functional Programming 
-  - building functions 
-  - function benefits 
+ 
+Functional programming is the art of constructing and applying functions to variables in your code. It is basically the core of writing code in R. Whenever you are manipulating an object you are using, or "calling" a function to do so. Knowing how to write and call functions allows you to optimize the core principle of reproducibility.
+ 
+The basic elements of the function is a name, argument(input), function body(statements to execute), and return value(output). 
+
+![](images\Function.png)
+We've been using functions throughout this entire training series, however for the most part they've been functions from base R or loaded packages. To optimize your code when running specific tasks, its important to learn how to make your own functions to synthesize tasks.  
+ 
+**To Do**: Let's make a function that lets us know if a number is positive, or negative using our roadmap to success. 
+
+```{r}
+#To build our function we need to know the following elements: 
+#function name
+#argument
+#function body 
+#return value 
+
+DefineNumber<- function(num){
+  if(num>0){
+    print(paste(num, "is positive"))
+  }else{
+    print(paste(num, "is negative"))
+  }
+
+}
+
+#Reminders: 
+#have all my conditions been met? 
+#are all my statements closed? 
+#are all my variable types compatible? 
+```
+ 
+**To Do**: Take a look at the environment in the upper right corner, you should see your new function in the 'Functions' category
+
+
+**To Do**: Test your function out below 
+
+```{r}
+DefineNumber(5)
+DefineNumber(-1)
+DefineNumber(-5)
+```
+Nice work!! 
+
+Notice how to test out your function you had to rewrite almost the same thing every time. Iterations will help us reduce this redundancy! 
+ 
+ 
 ## 6. Iterations Expansion 
-  - lapply 
+
+For loops and lapply statements allow us to perform the same function on multiple variables, without having to run it individually each time.  
+
+```{r}
+series<-c(-1,4,900,-27,45,79,-35,-4670)
+```
+
+```{r}
+#generate a for loop 
+for (i in series){
+  DefineNumber(i)
+}
+```
+
+```{r}
+list<-lapply(series, function(i){
+  DefineNumber(i)
+  }
+  )
+```
   
   
 ## Re(Sources)
@@ -256,3 +322,4 @@ Towardsdatascience.com
 [What is an R Package](https://doimspp.sharepoint.com/:w:/r/sites/nps-SWNC/Shared%20Documents/SWNC%20All%20Staff/SWNC%20R%20Trainings/3%20-%20What%20is%20a%20package.docx?d=we63a96814b614a668fe5da83df8c82ba&csf=1&web=1&e=8gc1mc)
 [pkgnet package](https://uptake.github.io/pkgnet/index.html)
 [even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)
+[Troubleshooting](https://jillymackay.github.io/RatRDSVS/trouble.html)

@@ -69,7 +69,7 @@ In today's session we hope to be able to give you the tools to learn from and en
 
 Let's start off by breaking down common misconceptions that throw people off when they begin to learn how to code. 
 
-Myth #1: "I keep getting errors and I don't know why!!"
+### Myth #1: "I keep getting errors and I don't know why!!"
 
 R likes to use bright red text for errors and warnings. However they shouldn't all have the same overwhelming sense of doom as implied by the color. It's important to learn how to distinguish a warning from an error, as well as learning how to decoding its message.
 
@@ -84,13 +84,13 @@ The nice thing about R is that it often gives you a reason for why things have h
 As you can see there's scary red text, however if you take a closer look you can see that its just giving you more info on the package being installed, and isn't actually a warning or error! 
 
 
-Myth #2: "I've done the exact same thing you did and it isn't working!! R must hate me"
+### Myth #2: "I've done the exact same thing you did and it isn't working!! R must hate me"
 
 There will be times where you feel like you've typed the exact same thing over and over again and it isn't working, even thought it looks "exactly the same". Often the issue will be as small as a syntax error. 
 
 R is very particular in its formatting, so something as small as a . or a } can trip up the code. This is why its important to double check your code, or compare with a friend who may be able to spot something that you missed after staring at the screen for so long. 
 
-Take a look at the code below and try to figure out the issue in each example:
+**To Do**: Take a look at the code below and try to figure out the issue in each example:
 
 ```{example}
 
@@ -118,8 +118,7 @@ summary(dta[, 2])
 This [blog post](https://statsandr.com/blog/top-10-errors-in-r/#using-a-function-that-is-not-installed-or-loaded) has more great examples of many common errors and how to fix them
 
 
-
-Myth #3: "Coders like Sam and Laura know the answers off the top of their head!! I'll never get there" 
+### Myth #3: "Coders like Sam and Laura know the answers off the top of their head!! I'll never get there" 
 
 Although it may seem like we have all the answers, Laura and I area constantly learning, and often are furiously googling error messages and keywords to get an answer to our problem 
 
@@ -133,22 +132,58 @@ But I still feel like I don't know anything!!! My computer is going to explode!!
 Just Remember... 
 ![](images/SmokeyTheBear.jpg)
 
-
 Let's go over coding best practices and build your tool belt for success! 
 
-"How did they know the answer to that?" 
+*"How did they know the answer to that?"* 
 
-- utilize your resources
-    - stack overflow 
-    - help files 
-    - pair programming 
+As mentioned earlier, skilled coders are just skilled googlers (if that's even a verb)
+### Tool #1: Utilize your resources !!!
+
+Remember that R is open source, so there loads of documentation out there for you to learn more about the packages and functions you're using. My favorite online resources are Google, [Stack Overflow](https://stackoverflow.com/), and [Geeks for Geeks](https://www.geeksforgeeks.org/). Sometimes its as easy as copy and pasting in the error message, and other times you have to be clever with the keywords you're using.
+
+Even better, R also has its own [documentation](https://www.rdocumentation.org/) on the packages on its server. This can also be accessed using the ? and ?? in the console (bottom left), or the 'Packages' and 'Help' tabs (bottom right). 
+
+Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
+
+**To Do**: Install and load the 'pkgnet' package 
+```{pkginstall}
+#install.packages('pkgnet')
+library(pkgnet)
+```
+
+**To Do**: Using your preferred method, explore the 'pkgnet' package and create a package report of the 'tidyr' package
+```{}
+#create a package report of the tidyr package 
+```
+
+
+Finally, [pair programming](https://www.geeksforgeeks.org/pair-programming/) is one of the most effective resources at your disposal. to use the cheesy yet true phrase: "two heads are better than one"  
+<br>
+    
+*"It's been a month since I last coded and I don't remember what this even does!"* 
+### Tool #2: Get in the habit of using detailed documentation and version control 
+
+Often people believe that documentation and version control are only needed when you're working on a project with a team. However this could be further from the case. Detailed documentation is key to understanding your code down the line, and version control allows you to go back in time and see what you've done. 
+
+I like to think of both as a letter to my future self. Since code doesn't come naturally to most people, annotating in familiar language makes it a lot easier to come back to. You also never know if a project will become collaborative down the line, so its useful to be able to have the documentation written as you go, so that its easier to explain to future users. 
+
+Similarly, version control like GitHub allows you to go back in time, which allows you to take more risks when modifying code. For example, say you've got code that works to complete a task for certain parameters and you've been tasked to expand those parameters. with GitHub you can edit the code you've already written and if it ends up breaking your code you can just go back and replace it with your old code. 
+
+The next task is for those who have had experience using GitHub. If you haven't gone over our GitHub training yet or need a refresher, come back to this section once you've completed that training. We will go over this during today's session so that it can be a reference in the recording, but don't worry if this all seems new to you right now.  
+
+**To Do**: Go to this training GitHub Repository, and look for the commit that says "code that works for Tool #2" to find the solution to the following broken code.
+
+
 - documentation and version control (Even if you're working by yourself)
     - Comments 
     - GitHub Repository!!! (stage commit push pull!)
+
+
 - Reducing...
-    - Repetitive code (pipeline, functional programming)
     - Bad variable names 
     - Complicating code 
+"I feel like I've written the same thing over and over again"  
+    - Repetitive code (pipeline, functional programming)
 - Take breaks and have fun !!!
 
 
@@ -179,4 +214,5 @@ Towardsdatascience.com
 [Why R](https://medium.datadriveninvestor.com/learning-r-programming-b0bbd246ada4)
 [10 most common coding mistakes](https://www.makeuseof.com/tag/common-programming-coding-mistakes/#:~:text=Knowing%20mistakes%20coders%20make%2C%20and%20how,will%20come%20across%20as%20you%20learn.&text=Knowing%20mistakes%20coders%20make%2C,across%20as%20you%20learn.&text=coders%20make%2C%20and%20how,will%20come%20across%20as) 
 [What is an R Package](https://doimspp.sharepoint.com/:w:/r/sites/nps-SWNC/Shared%20Documents/SWNC%20All%20Staff/SWNC%20R%20Trainings/3%20-%20What%20is%20a%20package.docx?d=we63a96814b614a668fe5da83df8c82ba&csf=1&web=1&e=8gc1mc)
-
+[pkgnet package](https://uptake.github.io/pkgnet/index.html)
+[even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)

@@ -300,7 +300,7 @@ The basic elements of the function is a name, argument(input), function body(sta
 ![](images\Function.png)
 We've been using functions throughout this entire training series, however for the most part they've been functions from base R or loaded packages. Its important to learn how to make your own functions to synthesize tasks and optimize your code.   
  
-**To Do**: Let's make a function that takes a number and returns a phrase letting us know if the number is positive or negative. We'll use our roadmap to success to guide our decision making. 
+**To Do**: Let's make a function called DefineNumber that takes a number and returns a phrase letting us know if the number is positive or negative. We'll use our roadmap to success to guide our decision making. 
 
 ```{r}
 #INPUT DATA (primary argument)

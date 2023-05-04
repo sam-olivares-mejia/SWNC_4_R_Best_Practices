@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # R Best Practices {.tabset .tabset-pills}
 
+## Intro
+
 Today we will be de-bunking coding myths and misconceptions. 
 
 ![](images/Mythbusters.jpg)
@@ -32,12 +34,12 @@ In today's session we will cover the purpose and benefits of R, debunk common co
 Towards the end, we will dive deeper into ways to optimize your code via functional programming and iterations. 
 
 Agenda: 
-1. Why R? 
-2. Debunking Common Coding Myths 
-3. Best Practices Principles 
-4. Problem Solving Workflow 
-5. Functional Programming 
-6. Iterations Expansion 
+  1. Why R? 
+  2. Debunking Common Coding Myths 
+  3. Best Practices Principles 
+  4. Problem Solving Workflow 
+  5. Functional Programming 
+  6. Iterations Expansion 
 
 
 </br>
@@ -45,7 +47,7 @@ Agenda:
 
 ## 1. Why R? 
 
-"Why am I doing this??"
+### "Why am I doing this??"
 
   - As introduced in previous sessions, R is one of the leading programming languages for statistics and data visualization, especially in the ecological community. 
   
@@ -94,10 +96,11 @@ R is very particular in its formatting, so something as small as a . or a } can 
 
 **To Do**: Take a look at the code below and try to figure out the issue in each example:
 
-```{r, example}
+```{r eval=FALSE, example}
 
 #example 1 
 letters<- c("R", "C," "B")
+
 
 #example 2
 x <- 7 
@@ -106,6 +109,7 @@ if(x > 10) {
  else {
   print("x <= 10")
  }
+
 
 #example 3
   data <- data.frame(
@@ -116,6 +120,13 @@ summary(dta[, 2])
 
 ```
 
+
+```{r}
+
+# 1. missplaced comma
+# 2. missing closing bracket
+# 3. miss-spelled argument 'dta'
+```
 
 This [blog post](https://statsandr.com/blog/top-10-errors-in-r/#using-a-function-that-is-not-installed-or-loaded) has more great examples of many common errors and how to fix them
 
@@ -129,8 +140,9 @@ Sure, after a while you start to remember how to solve common errors like typos 
 
 ## 3. Best Practices Principles 
 
-But I still feel like I don't know anything!!! My computer is going to explode!! 
+### But I still feel like I don't know anything!!! My computer is going to explode!! 
 ![](images/ComputerFire.jpg) 
+
 Just Remember... 
 ![](images/SmokeyTheBear.jpg)
 
@@ -139,6 +151,7 @@ Let's go over coding best practices and build your tool belt for success!
 *"How did they know the answer to that?"* 
 
 As mentioned earlier, skilled coders are just skilled googlers (if that's even a verb)
+
 ### Tool #1: Utilize your resources !!!
 
 Remember that R is open source, so there loads of documentation out there for you to learn more about the packages and functions you're using. My favorite online resources are Google, [Stack Overflow](https://stackoverflow.com/), and [Geeks for Geeks](https://www.geeksforgeeks.org/). Sometimes its as easy as copy and pasting in the error message, and other times you have to be clever with the keywords you're using.
@@ -147,15 +160,18 @@ Even better, R also has its own [documentation](https://www.rdocumentation.org/)
 
 Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
 
-**To Do**: Install and load the 'pkgnet' package 
+**To Do**: Install and load the 'tidyr' package if you don't have it already
 ```{r, pkginstall}
-#install.packages('pkgnet')
-library(pkgnet)
+#install.packages('tidyr')
+library(tidyr)
 ```
 
-**To Do**: Using your preferred method, explore the 'pkgnet' package and create a package report of the 'tidyr' package
-```{}
-#create a package report of the tidyr package 
+**To Do**: Using your preferred method, explore the 'tidyr' package and use the unite function to combine the "track" and "artist" columns in the billboard data set using " by " as the separator. 
+
+```{r}
+#unite the track and artist columns in the billboard data set using " by " as the separator  
+billboard_edited <-unite(billboard, "combined", "track", "artist", sep= " by " )
+
 ```
 
 
@@ -163,6 +179,7 @@ Finally, [pair programming](https://www.geeksforgeeks.org/pair-programming/) is 
 <br>
     
 *"It's been a month since I last coded and I don't remember what this even does!"* 
+
 ### Tool #2: Get in the habit of using detailed documentation and version control 
 
 Often people believe that documentation and version control are only needed when you're working on a project with a team. However this could be further from the case. Detailed documentation is key to understanding your code down the line, and version control allows you to go back in time and see what you've done. 
@@ -174,17 +191,30 @@ Similarly, version control like GitHub allows you to go back in time, which allo
 The next task is for those who have had experience using GitHub. If you haven't gone over our GitHub training yet or need a refresher, come back to this section once you've completed that training. We will go over this during today's session so that it can be a reference in the recording, but don't worry if this all seems new to you right now.  
 
 **To Do**: Go to this training GitHub Repository, and look for the commit that says "code that works for Tool #2" to find the solution to the following broken code.
-```{r}
+```{r eval=FALSE}
 # Program to check if the input number is odd or even.
 # A number is even if division by 2 give a remainder of 0.
 # If remainder is 1, it is odd.
 num = as.integer(readline(prompt="Enter a number: "))
 if((num %% 2) == 0) {
 print(paste(num))
- else {
+else {
 print(paste(num))
-}
+ }
+  
+
 ```
+
+
+```{r eval=FALSE }
+#solution
+if((num %% 2) == 0) {
+print(paste(num, "is even"))
+} else {
+print(paste(num, "is odd"))
+ }
+```
+
 ### Tool #3: Reduce, Reuse, Recycle 
 
 Just like the earth, we want to keep our code as clean as possible! 
@@ -203,6 +233,18 @@ groceries<- data.frame(
 )
 ```
 
+
+```{r}
+#up to interpretation
+#potential solution:
+
+groceries<- data.frame(
+  Food=c("potatos", "cereal", "milk"),
+  Price=c(1.5, 3.40, 3.59),
+  Store=c("Safeway", "TraderJoes", "Walmart")
+)
+
+```
 
 REUSE: code that you've used before
 
@@ -238,7 +280,13 @@ Amazing work! We've built our toolbelt of success and are ready to start coding!
 
 ## 4. Problem Solving Workflow 
 
-*"Where do I even begin?!?"*
+### *"Where do I even begin?!?"*
+
+The following diagram is a map with questions to ask yourself while your coding. The main elements you'll need to keep in mind while coding are your Input Data, Dependencies, Conditions, and Output Data. 
+
+The questions you ask about each of these elements will help guide you to the functions you will need to solve your problem. You'll want to keep in mind your main principles of Reduce, Reuse Recycle to make your code as Reproducible as possible. 
+
+Finally, remember to use all your resources and double check your work!!
 
 ![](images/Roadmap.png)
 Now you have both the tools and the roadmap to success!! 
@@ -250,16 +298,30 @@ Functional programming is the art of constructing and applying functions to vari
 The basic elements of the function is a name, argument(input), function body(statements to execute), and return value(output). 
 
 ![](images\Function.png)
-We've been using functions throughout this entire training series, however for the most part they've been functions from base R or loaded packages. To optimize your code when running specific tasks, its important to learn how to make your own functions to synthesize tasks.  
+We've been using functions throughout this entire training series, however for the most part they've been functions from base R or loaded packages. Its important to learn how to make your own functions to synthesize tasks and optimize your code.   
  
-**To Do**: Let's make a function that lets us know if a number is positive, or negative using our roadmap to success. 
+**To Do**: Let's make a function that takes a number and returns a phrase letting us know if the number is positive or negative. We'll use our roadmap to success to guide our decision making. 
 
 ```{r}
-#To build our function we need to know the following elements: 
-#function name
-#argument
-#function body 
-#return value 
+#INPUT DATA (primary argument)
+#In this example, we aren't necessarily working with traditional "data" in the form of a data set 
+#instead our "input data" is the number we want to know whether its positive or negative 
+
+#DEPENDENCIES (additional arguments)
+#no dependencies 
+
+#CONDITIONS (function body)
+#the conditions in this problem is whether the number is positive or negative
+#this will require an if else statement 
+
+#OUTPUT (return value)
+#the type of output data we're looking for is the answer to our question, 
+#this will be a declaration statement that we'll want printed as the result 
+  
+#FUNCTIONS NEEDED (function body)
+#print() - to print our statement 
+#paste() - concatenate vectors 
+
 
 DefineNumber<- function(num){
   if(num>0){
@@ -270,14 +332,14 @@ DefineNumber<- function(num){
 
 }
 
-#Reminders: 
+#Double Check: 
 #have all my conditions been met? 
 #are all my statements closed? 
 #are all my variable types compatible? 
 ```
- 
-**To Do**: Take a look at the environment in the upper right corner, you should see your new function in the 'Functions' category
 
+
+**To Do**: Take a look at the environment in the upper right corner, you should see your new function in the 'Functions' category
 
 **To Do**: Test your function out below 
 
@@ -288,24 +350,65 @@ DefineNumber(-5)
 ```
 Nice work!! 
 
-Notice how to test out your function you had to rewrite almost the same thing every time. Iterations will help us reduce this redundancy! 
+Notice that to test out your function you had to rewrite almost the same thing every time. Iterations will help us reduce this redundancy! 
  
  
 ## 6. Iterations Expansion 
 
 For loops and lapply statements allow us to perform the same function on multiple variables, without having to run it individually each time.  
 
+**To Do**: lets generate a vector called 'series' that contains 8 different numerical values
 ```{r}
 series<-c(-1,4,900,-27,45,79,-35,-4670)
 ```
 
+The basic syntax for a for loop is:
+
+for (variable in sequence){
+  expression 
+}
+
+The variable in a for loop is a placeholder, so you can name it whatever you want as long as it's consistent within the for loop's expression. "x" and "i" are common placeholders, but it can be helpful to be more specific when using multiple for loops. 
+
+**To Do**: Run the for loop below 
 ```{r}
 #generate a for loop 
 for (i in series){
-  DefineNumber(i)
+  temp<- DefineNumber(i)
 }
 ```
+Notice that our for loop prints out a statement for each number in series, however they are not saved in a variable. Instead the 'temp' variable is overwritten in each iteration of the for loop, which means that should be the last statement. 
 
+**To Do**: let's double check that temp == "-4670 is negative" by running the code below 
+```{r}
+temp
+```
+If we wanted to store our variables within a vector, we'd need to preallocate a vector before running the loop, and then add in a line appending our 'temp' variable onto the vector each time the expression is run. 
+
+**To Do**: Run the code below to pre-allocate a vector and append the temporary variable each time the for loop expression is run
+```{r}
+#pre-allocate a vector 
+vector<-c()
+#generate a for loop 
+for (i in series){
+  temp<- DefineNumber(i)
+  vector<-c(vector, temp)
+}
+```
+**To Do**: Run the code below to check our work 
+```{r}
+vector
+```
+
+The lapply function comes in handy when we want to save all our outputs in a list without pre-allocation.  
+
+The basic syntax for an lapply() function is;
+
+list name <- lapply(sequence, function(variable){
+  expression
+})
+
+**To Do**: Run the lapply below: 
 ```{r}
 list<-lapply(series, function(i){
   DefineNumber(i)
@@ -313,13 +416,27 @@ list<-lapply(series, function(i){
   )
 ```
   
+Although they seem pretty similar, lapply's ability to store outputs in a list without pre-allocation is a huge advantage. This reduces the amount of lines needed in our code, and lists are also a great way to optimize space in our environment, especially when working with large amounts of data. 
+
+**To Do**: check out your list by clicking on it within the environment
+
+```{r}
+#we can use names() and series to rename the elements in our list to make them easier to interpret 
+names(list)<-series 
+```
+  
+Being able to combine custom made functions with iterations is super powerful when working with large amounts of data, and is key to writing reproducible code. Our goal is to make the code as adaptable as possible by writing generalized functions that allow us to perform the same task on different inputs.
+
+Ultimately we want to be able to *reproduce* our tasks with new data in the future with ease. 
+
+Congrats you've reached the end!!! Starting is always the hardest, but hopefully today's session has encouraged you to (re)start your coding journey. 
+
   
 ## Re(Sources)
 
-Towardsdatascience.com
-[Why R](https://medium.datadriveninvestor.com/learning-r-programming-b0bbd246ada4)
-[10 most common coding mistakes](https://www.makeuseof.com/tag/common-programming-coding-mistakes/#:~:text=Knowing%20mistakes%20coders%20make%2C%20and%20how,will%20come%20across%20as%20you%20learn.&text=Knowing%20mistakes%20coders%20make%2C,across%20as%20you%20learn.&text=coders%20make%2C%20and%20how,will%20come%20across%20as) 
-[What is an R Package](https://doimspp.sharepoint.com/:w:/r/sites/nps-SWNC/Shared%20Documents/SWNC%20All%20Staff/SWNC%20R%20Trainings/3%20-%20What%20is%20a%20package.docx?d=we63a96814b614a668fe5da83df8c82ba&csf=1&web=1&e=8gc1mc)
-[pkgnet package](https://uptake.github.io/pkgnet/index.html)
-[even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)
-[Troubleshooting](https://jillymackay.github.io/RatRDSVS/trouble.html)
+* [Why R](https://medium.datadriveninvestor.com/learning-r-programming-b0bbd246ada4)
+* [10 most common coding mistakes](https://www.makeuseof.com/tag/common-programming-coding-mistakes/#:~:text=Knowing%20mistakes%20coders%20make%2C%20and%20how,will%20come%20across%20as%20you%20learn.&text=Knowing%20mistakes%20coders%20make%2C,across%20as%20you%20learn.&text=coders%20make%2C%20and%20how,will%20come%20across%20as) 
+* [What is an R Package](https://doimspp.sharepoint.com/:w:/r/sites/nps-SWNC/Shared%20Documents/SWNC%20All%20Staff/SWNC%20R%20Trainings/3%20-%20What%20is%20a%20package.docx?d=we63a96814b614a668fe5da83df8c82ba&csf=1&web=1&e=8gc1mc)
+* [pkgnet package](https://uptake.github.io/pkgnet/index.html)
+* [even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)
+* [Troubleshooting](https://jillymackay.github.io/RatRDSVS/trouble.html)

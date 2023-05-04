@@ -1,0 +1,401 @@
+---
+title: "R Best Practices"
+author: "Sam Olivares-Mejia"
+date: "2023-05-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Best Practices {.tabset .tabset-pills}
+
+## Intro
+
+Today we will be de-bunking coding myths and misconceptions. 
+
+![](images/Mythbusters.jpg)
+
+You may have previously thought one of the following: 
+
+"Why am I doing this??"
+
+"I keep getting errors and I don't know why!!"
+
+"How did they know the answer to that?" 
+
+"Where do I even begin?!?"
+
+If you've said these to yourself or have felt similar  emotions of frustration towards coding, this training is for YOU!! 
+
+In today's session we will cover the purpose and benefits of R, debunk common coding myths, and equip you with a tool belt of resources for success!
+
+Towards the end, we will dive deeper into ways to optimize your code via functional programming and iterations. 
+
+Agenda: 
+  1. Why R? 
+  2. Debunking Common Coding Myths 
+  3. Best Practices Principles 
+  4. Problem Solving Workflow 
+  5. Functional Programming 
+  6. Iterations Expansion 
+
+
+</br>
+
+
+## 1. Why R? 
+
+### "Why am I doing this??"
+
+  - As introduced in previous sessions, R is one of the leading programming languages for statistics and data visualization, especially in the ecological community. 
+  
+![](images/WhyR.jpg)  
+
+
+As you can see, R's strength comes from all of these elements working together. 
+
+The beauty of the being open source and part of a collaborative community, is that you don't need to know how to do everything in order to succeed. People are constantly writing new code and sharing how they solved their problems via forums, reports, and packages. 
+
+To review, packages are like the "expansion pack" or "power ups" in R code that allow you to perform tasks that don't come in the base language. For a deeper dive revisit Laura's [What is an R Package Guide](https://doimspp.sharepoint.com/:w:/r/sites/nps-SWNC/Shared%20Documents/SWNC%20All%20Staff/SWNC%20R%20Trainings/3%20-%20What%20is%20a%20package.docx?d=we63a96814b614a668fe5da83df8c82ba&csf=1&web=1&e=8gc1mc).
+
+Packages are constantly being built, updated, and can be adapted based on user needs which meas R is always getting better as time goes forward. There is also a vast world of documentation that if you know how to look for it, allows you to learn as you code. 
+
+Finally, of the largest principles that is important to keep in mind throughout your coding journey is the concept of **Reproducibility**. Ultimately, we want our code and processes to be able to be reproduced over time, by different people, and have it apply to as much data as possible. When following best practices, R can open up a world of possibilities by cutting down the time and effort needed to analyze, process, and visualize our data. 
+
+In today's session we hope to be able to give you the tools to learn from and engage with the coding community in a sustainable manner. We know that like any language, R has a steep learning curve to it, so we want to break down as many barriers as we can for you to succeed. 
+
+
+## 2. Debunking Common Coding Myths 
+
+![](images/MythbustersLogo.jpg)
+
+Let's start off by breaking down common misconceptions that throw people off when they begin to learn how to code. 
+
+### Myth #1: "I keep getting errors and I don't know why!!"
+
+R likes to use bright red text for errors and warnings. However they shouldn't all have the same overwhelming sense of doom as implied by the color. It's important to learn how to distinguish a warning from an error, as well as learning how to decoding its message.
+
+
+This handy graphic from [R @R(D)SVS](https://jillymackay.github.io/RatRDSVS/trouble.html) helps us do both! 
+![](images/ErrorsVsWarnings.png)
+
+The nice thing about R is that it often gives you a reason for why things have happened, which makes it a lot easier to troubleshoot your code. It also means that messages might pop up out of the blue and throw you off. Take the following example: 
+
+![](https://i.stack.imgur.com/naDtw.png)
+
+As you can see there's scary red text, however if you take a closer look you can see that its just giving you more info on the package being installed, and isn't actually a warning or error! 
+
+
+### Myth #2: "I've done the exact same thing you did and it isn't working!! R must hate me"
+
+There will be times where you feel like you've typed the exact same thing over and over again and it isn't working, even thought it looks "exactly the same". Often the issue will be as small as a syntax error. 
+
+R is very particular in its formatting, so something as small as a . or a } can trip up the code. This is why its important to double check your code, or compare with a friend who may be able to spot something that you missed after staring at the screen for so long. 
+
+**To Do**: Take a look at the code below and try to figure out the issue in each example:
+
+```{r eval=FALSE, example}
+
+#example 1 
+letters<- c("R", "C," "B")
+
+
+#example 2
+x <- 7 
+if(x > 10) {
+  print("x > 10")
+ else {
+  print("x <= 10")
+ }
+
+
+#example 3
+  data <- data.frame(
+  x = rnorm(10),
+  y = rnorm(10)
+)
+summary(dta[, 2])
+
+```
+
+
+This [blog post](https://statsandr.com/blog/top-10-errors-in-r/#using-a-function-that-is-not-installed-or-loaded) has more great examples of many common errors and how to fix them
+
+
+### Myth #3: "Coders like Sam and Laura know the answers off the top of their head!! I'll never get there" 
+
+Although it may seem like we have all the answers, Laura and I area constantly learning, and often are furiously googling error messages and keywords to get an answer to our problem 
+
+![](images/Typing.jpg)
+Sure, after a while you start to remember how to solve common errors like typos and open brackets, but for the most part a skilled coder is just a skilled researcher and very VERY patient. 
+
+## 3. Best Practices Principles 
+
+### But I still feel like I don't know anything!!! My computer is going to explode!! 
+![](images/ComputerFire.jpg) 
+
+Just Remember... 
+![](images/SmokeyTheBear.jpg)
+
+Let's go over coding best practices and build your tool belt for success! 
+
+*"How did they know the answer to that?"* 
+
+As mentioned earlier, skilled coders are just skilled googlers (if that's even a verb)
+
+### Tool #1: Utilize your resources !!!
+
+Remember that R is open source, so there loads of documentation out there for you to learn more about the packages and functions you're using. My favorite online resources are Google, [Stack Overflow](https://stackoverflow.com/), and [Geeks for Geeks](https://www.geeksforgeeks.org/). Sometimes its as easy as copy and pasting in the error message, and other times you have to be clever with the keywords you're using.
+
+Even better, R also has its own [documentation](https://www.rdocumentation.org/) on the packages on its server. This can also be accessed using the ? and ?? in the console (bottom left), or the 'Packages' and 'Help' tabs (bottom right). 
+
+Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
+
+**To Do**: Install and load the 'tidyr' package if you don't have it already
+```{r, pkginstall}
+#install.packages('tidyr')
+library(tidyr)
+```
+
+**To Do**: Using your preferred method, explore the 'tidyr' package and use the unite function to combine the "track" and "artist" columns in the billboard data set using " by " as the separator. 
+
+```{r}
+#unite the track and artist columns in the billboard data set using " by " as the separator  
+
+```
+
+
+Finally, [pair programming](https://www.geeksforgeeks.org/pair-programming/) is one of the most effective resources at your disposal. to use the cheesy yet true phrase: "two heads are better than one"  
+<br>
+    
+*"It's been a month since I last coded and I don't remember what this even does!"* 
+
+### Tool #2: Get in the habit of using detailed documentation and version control 
+
+Often people believe that documentation and version control are only needed when you're working on a project with a team. However this could be further from the case. Detailed documentation is key to understanding your code down the line, and version control allows you to go back in time and see what you've done. 
+
+I like to think of both as a letter to my future self. Since code doesn't come naturally to most people, annotating in familiar language makes it a lot easier to come back to. You also never know if a project will become collaborative down the line, so its useful to be able to have the documentation written as you go, so that its easier to explain to future users. 
+
+Similarly, version control like GitHub allows you to go back in time, which allows you to take more risks when modifying code. For example, say you've got code that works to complete a task for certain parameters and you've been tasked to expand those parameters. with GitHub you can edit the code you've already written and if it ends up breaking your code you can just go back and replace it with your old code. 
+
+The next task is for those who have had experience using GitHub. If you haven't gone over our GitHub training yet or need a refresher, come back to this section once you've completed that training. We will go over this during today's session so that it can be a reference in the recording, but don't worry if this all seems new to you right now.  
+
+**To Do**: Go to this training GitHub Repository, and look for the commit that says "code that works for Tool #2" to find the solution to the following broken code.
+```{r eval=FALSE}
+# Program to check if the input number is odd or even.
+# A number is even if division by 2 give a remainder of 0.
+# If remainder is 1, it is odd.
+num = as.integer(readline(prompt="Enter a number: "))
+if((num %% 2) == 0) {
+print(paste(num))
+else {
+print(paste(num))
+ }
+  
+
+```
+
+
+### Tool #3: Reduce, Reuse, Recycle 
+
+Just like the earth, we want to keep our code as clean as possible! 
+
+
+REDUCE: clunky or unorganized code. 
+
+Use variable names that are concise, consistent, unique, and have meaning. Your initial instinct will be to name variables as quickly as possible, but just remember that you're communicating to both your future self AND future users. For a deep dive on naming conventions, visit Programming Duck's [ultimate guide and reference](https://programmingduck.com/articles/naming).
+
+**To Do**: Rename the column names in the following data frame 
+```{r}
+groceries<- data.frame(
+  FOOD.NAMES=c("potatos", "cereal", "milk"),
+  money.well.spent=c(1.5, 3.40, 3.59),
+  StoreBoughtFrom=c("Safeway", "TraderJoes", "Walmart")
+)
+```
+
+
+REUSE: code that you've used before
+
+Throughout the SWNC R training Series, we have frequently reused code examples from work us and others have done in the past. As long as you understand the code and cite appropriately, code is fair game and its in fact encouraged to reuse code. Remember R is open source and there's no point in re-inventing the wheel!! 
+
+**To Do**: Run the code below adapted from the first data wrangling session to standardize your column names 
+```{r}
+library(janitor)
+groceries_clean <- groceries %>%
+  clean_names()
+```
+
+
+RECYCLE: repetitive code into a pipeline, function, or iteration! 
+
+*"I feel like I've written the same thing over and over again"*  
+
+If you feel like you've been writing the same chunk of code over and over again and only replacing one or two things each time, consider optimizing that code with a pipeline, function or iteration! 
+
+Remember that the pipeline is a great way to reduce repetitive code when applying multiple functions on the same variable: 
+
+![](images\Groundhog_Pipeline.png)
+Similarly, using iteration and creating your own functions are key in optimizing speed, storage, and time when writing code. The last two sections of today's training will be a deep dive on creating functions and iterations(specifically lapply) so stay tuned! 
+
+
+### Bonus Tool: Take breaks and have fun !!!
+
+Code can get annoying at times so remember to take the time to release frustration through breaks! When's the last time you went on a walk or had a snack? Thank your brain and give it a moment to refresh before diving back into your code - often this will lead to new insights when you're stuck on a problem. the nice thing about coding is theres many ways to accomplish the same task so if all else fails take a break and try a new approach!! :)
+
+
+Amazing work! We've built our toolbelt of success and are ready to start coding! 
+![](images/RobTheBuilder.jpg) 
+
+## 4. Problem Solving Workflow 
+
+### *"Where do I even begin?!?"*
+
+The following diagram is a map with questions to ask yourself while your coding. The main elements you'll need to keep in mind while coding are your Input Data, Dependencies, Conditions, and Output Data. 
+
+The questions you ask about each of these elements will help guide you to the functions you will need to solve your problem. You'll want to keep in mind your main principles of Reduce, Reuse Recycle to make your code as Reproducible as possible. 
+
+Finally, remember to use all your resources and double check your work!!
+
+![](images/Roadmap.png)
+Now you have both the tools and the roadmap to success!! 
+
+## 5. Functional Programming 
+ 
+Functional programming is the art of constructing and applying functions to variables in your code. It is basically the core of writing code in R. Whenever you are manipulating an object you are using, or "calling" a function to do so. Knowing how to write and call functions allows you to optimize the core principle of reproducibility.
+ 
+The basic elements of the function is a name, argument(input), function body(statements to execute), and return value(output). 
+
+![](images\Function.png)
+We've been using functions throughout this entire training series, however for the most part they've been functions from base R or loaded packages. Its important to learn how to make your own functions to synthesize tasks and optimize your code.   
+ 
+**To Do**: Let's make a function called DefineNumber that takes a number and returns a phrase letting us know if the number is positive or negative. We'll use our roadmap to success to guide our decision making. 
+
+```{r}
+#INPUT DATA (primary argument)
+
+
+#DEPENDENCIES (additional arguments)
+
+
+#CONDITIONS (function body)
+
+
+#OUTPUT (return value)
+
+  
+#FUNCTIONS NEEDED (function body)
+
+
+#Double Check: 
+#have all my conditions been met? 
+#are all my statements closed? 
+#are all my variable types compatible? 
+```
+
+
+**To Do**: Take a look at the environment in the upper right corner, you should see your new function in the 'Functions' category
+
+**To Do**: Test your function out below 
+
+```{r eval=FALSE}
+DefineNumber(-5)
+DefineNumber(23)
+DefineNumber(43)
+DefineNumber(-759)
+```
+
+Nice work!! 
+
+Notice that to test out your function you had to rewrite almost the same thing every time. Iterations will help us reduce this redundancy! 
+ 
+ 
+## 6. Iterations Expansion 
+
+For loops and lapply statements allow us to perform the same function on multiple variables, without having to run it individually each time.  
+
+**To Do**: lets generate a vector called 'series' that contains 8 different numerical values
+```{r}
+series<-c(-1,4,900,-27,45,79,-35,-4670)
+```
+
+The basic syntax for a for loop is:
+
+for (variable in sequence){
+  expression 
+}
+
+The variable in a for loop is a placeholder, so you can name it whatever you want as long as it's consistent within the for loop's expression. "x" and "i" are common placeholders, but it can be helpful to be more specific when using multiple for loops. 
+
+**To Do**: Run the for loop below 
+```{r eval=FALSE}
+#generate a for loop 
+for (i in series){
+  temp<- DefineNumber(i)
+}
+```
+Notice that our for loop prints out a statement for each number in series, however they are not saved in a variable. Instead the 'temp' variable is overwritten in each iteration of the for loop, which means that should be the last statement. 
+
+**To Do**: let's double check that temp == "-4670 is negative" by running the code below 
+```{r eval=FALSE}
+temp
+```
+If we wanted to store our variables within a vector, we'd need to preallocate a vector before running the loop, and then add in a line appending our 'temp' variable onto the vector each time the expression is run. 
+
+**To Do**: Run the code below to pre-allocate a vector and append the temporary variable each time the for loop expression is run
+```{r eval=FALSE}
+#pre-allocate a vector 
+vector<-c()
+#generate a for loop 
+for (i in series){
+  temp<- DefineNumber(i)
+  vector<-c(vector, temp)
+}
+```
+**To Do**: Run the code below to check our work 
+```{r eval=FALSE}
+vector
+```
+
+The lapply function comes in handy when we want to save all our outputs in a list without pre-allocation.  
+
+The basic syntax for an lapply() function is;
+
+list name <- lapply(sequence, function(variable){
+  expression
+})
+
+**To Do**: Run the lapply below: 
+```{r eval=FALSE}
+list<-lapply(series, function(i){
+  DefineNumber(i)
+  }
+  )
+```
+  
+Although they seem pretty similar, lapply's ability to store outputs in a list without pre-allocation is a huge advantage. This reduces the amount of lines needed in our code, and lists are also a great way to optimize space in our environment, especially when working with large amounts of data. 
+
+**To Do**: check out your list by clicking on it within the environment
+
+```{r eval=FALSE}
+#we can use names() and series to rename the elements in our list to make them easier to interpret 
+names(list)<-series 
+```
+  
+Being able to combine custom made functions with iterations is super powerful when working with large amounts of data, and is key to writing reproducible code. Our goal is to make the code as adaptable as possible by writing generalized functions that allow us to perform the same task on different inputs.
+
+Ultimately we want to be able to *reproduce* our tasks with new data in the future with ease. 
+
+Congrats you've reached the end!!! Starting is always the hardest, but hopefully today's session has encouraged you to (re)start your coding journey. 
+
+  
+## Re(Sources)
+
+* [Why R](https://medium.datadriveninvestor.com/learning-r-programming-b0bbd246ada4)
+* [10 most common coding mistakes](https://www.makeuseof.com/tag/common-programming-coding-mistakes/#:~:text=Knowing%20mistakes%20coders%20make%2C%20and%20how,will%20come%20across%20as%20you%20learn.&text=Knowing%20mistakes%20coders%20make%2C,across%20as%20you%20learn.&text=coders%20make%2C%20and%20how,will%20come%20across%20as) 
+* [What is an R Package](https://doimspp.sharepoint.com/:w:/r/sites/nps-SWNC/Shared%20Documents/SWNC%20All%20Staff/SWNC%20R%20Trainings/3%20-%20What%20is%20a%20package.docx?d=we63a96814b614a668fe5da83df8c82ba&csf=1&web=1&e=8gc1mc)
+* [pkgnet package](https://uptake.github.io/pkgnet/index.html)
+* [even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)
+* [Troubleshooting](https://jillymackay.github.io/RatRDSVS/trouble.html)

@@ -163,7 +163,6 @@ Remember that R is open source, so there loads of documentation out there for yo
 
 Even better, R also has its own [documentation](https://www.rdocumentation.org/) on the packages on its server. This can also be accessed using the ? and ?? in the console (bottom left), or the 'Packages' and 'Help' tabs (bottom right). 
 
-Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
 
 **To Do**: Install and load the 'tidyr' package if you don't have it already
 ```{r, pkginstall}
@@ -175,6 +174,9 @@ library(tidyr)
 
 ```{r}
 #unite the track and artist columns in the billboard data set using " by " as the separator  
+library(tidyr)
+unite(billboard, col="combined","track", "artist", sep="by")
+
 
 ```
 
@@ -201,11 +203,10 @@ The next task is for those who have had experience using GitHub. If you haven't 
 # If remainder is 1, it is odd.
 num = as.integer(readline(prompt="Enter a number: "))
 if((num %% 2) == 0) {
-print(paste(num))
-else {
-print(paste(num))
- }
-  
+print(paste(num,"is Even"))
+} else {
+print(paste(num,"is Odd"))
+}
 
 ```
 
@@ -222,9 +223,9 @@ Use variable names that are concise, consistent, unique, and have meaning. Your 
 **To Do**: Rename the column names in the following data frame 
 ```{r}
 groceries<- data.frame(
-  FOOD.NAMES=c("potatos", "cereal", "milk"),
-  money.well.spent=c(1.5, 3.40, 3.59),
-  StoreBoughtFrom=c("Safeway", "TraderJoes", "Walmart")
+  Food=c("potatos", "cereal", "milk"),
+  Price=c(1.5, 3.40, 3.59),
+  Store=c("Safeway", "TraderJoes", "Walmart")
 )
 ```
 
@@ -252,6 +253,7 @@ Remember that the pipeline is a great way to reduce repetitive code when applyin
 ![](images\Groundhog_Pipeline.png)
 Similarly, using iteration and creating your own functions are key in optimizing speed, storage, and time when writing code. The last two sections of today's training will be a deep dive on creating functions and iterations(specifically lapply) so stay tuned! 
 
+ 
 
 ### Bonus Tool: Take breaks and have fun !!!
 

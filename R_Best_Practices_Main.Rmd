@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Today we will be de-bunking coding myths and misconceptions. 
 
 ![](images/Mythbusters.jpg)
+[image source](https://www.kmjnow.com/2015/12/16/get-ready-for-mythbusters-live-in-fresno/) 
 
 You may have previously thought one of the following: 
 
@@ -34,11 +35,17 @@ In today's session we will cover the purpose and benefits of R, debunk common co
 Towards the end, we will dive deeper into ways to optimize your code via functional programming and iterations. 
 
 Agenda: 
+
   1. Why R? 
+  
   2. Debunking Common Coding Myths 
+  
   3. Best Practices Principles 
+  
   4. Problem Solving Workflow 
-  5. Functional Programming 
+  
+  5. Functional Programming Extension
+  
   6. Iterations Expansion 
 
 
@@ -52,7 +59,7 @@ Agenda:
   - As introduced in previous sessions, R is one of the leading programming languages for statistics and data visualization, especially in the ecological community. 
   
 ![](images/WhyR.jpg)  
-
+[image source](https://blogs.umass.edu/gwis/2015/05/21/crash-course-in-r-programming/)
 
 As you can see, R's strength comes from all of these elements working together. 
 
@@ -136,15 +143,18 @@ This [blog post](https://statsandr.com/blog/top-10-errors-in-r/#using-a-function
 Although it may seem like we have all the answers, Laura and I area constantly learning, and often are furiously googling error messages and keywords to get an answer to our problem 
 
 ![](images/Typing.jpg)
+[image source](https://www.flickr.com/photos/laurie_pink/3366028196/sizes/o/)
 Sure, after a while you start to remember how to solve common errors like typos and open brackets, but for the most part a skilled coder is just a skilled researcher and very VERY patient. 
 
 ## 3. Best Practices Principles 
 
 ### But I still feel like I don't know anything!!! My computer is going to explode!! 
 ![](images/ComputerFire.jpg) 
+[image source](https://www.syslogic-techsvc.com/5-reasons-leave-your-computer-repairs-hands-experts/shutterstock_1167477067/)
 
 Just Remember... 
 ![](images/SmokeyTheBear.jpg)
+[image adapted from Smokey the bear poster](https://en.wikipedia.org/wiki/Smokey_Bear)
 
 Let's go over coding best practices and build your tool belt for success! 
 
@@ -277,6 +287,7 @@ Code can get annoying at times so remember to take the time to release frustrati
 
 Amazing work! We've built our toolbelt of success and are ready to start coding! 
 ![](images/RobTheBuilder.jpg) 
+[image adapted from bob the builder graphic](https://img.favpng.com/8/17/8/bob-the-builder-dizzy-portable-network-graphics-image-roley-png-favpng-1d54cphjKTPiME4x9AgiCh6N6.jpg)
 
 ## 4. Problem Solving Workflow 
 
@@ -291,13 +302,15 @@ Finally, remember to use all your resources and double check your work!!
 ![](images/Roadmap.png)
 Now you have both the tools and the roadmap to success!! 
 
-## 5. Functional Programming 
+## 5. Functional Programming Extension
  
 Functional programming is the art of constructing and applying functions to variables in your code. It is basically the core of writing code in R. Whenever you are manipulating an object you are using, or "calling" a function to do so. Knowing how to write and call functions allows you to optimize the core principle of reproducibility.
  
 The basic elements of the function is a name, argument(input), function body(statements to execute), and return value(output). 
 
 ![](images\Function.png)
+[image source](https://setscholars.net/beginners-guide-to-r-r-functions/)
+
 We've been using functions throughout this entire training series, however for the most part they've been functions from base R or loaded packages. Its important to learn how to make your own functions to synthesize tasks and optimize your code.   
  
 **To Do**: Let's make a function called DefineNumber that takes a number and returns a phrase letting us know if the number is positive or negative. We'll use our roadmap to success to guide our decision making. 
@@ -440,3 +453,5 @@ Congrats you've reached the end!!! Starting is always the hardest, but hopefully
 * [pkgnet package](https://uptake.github.io/pkgnet/index.html)
 * [even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)
 * [Troubleshooting](https://jillymackay.github.io/RatRDSVS/trouble.html)
+* [building functions](https://setscholars.net/beginners-guide-to-r-r-functions/)
+

@@ -114,7 +114,7 @@ letters<- c("R", "C," "B")
 x <- 7 
 if(x > 10) {
   print("x > 10")
- else {
+else {
   print("x <= 10")
  }
 
@@ -163,7 +163,6 @@ Remember that R is open source, so there loads of documentation out there for yo
 
 Even better, R also has its own [documentation](https://www.rdocumentation.org/) on the packages on its server. This can also be accessed using the ? and ?? in the console (bottom left), or the 'Packages' and 'Help' tabs (bottom right). 
 
-Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
 
 **To Do**: Install and load the 'tidyr' package if you don't have it already
 ```{r, pkginstall}
@@ -199,13 +198,13 @@ The next task is for those who have had experience using GitHub. If you haven't 
 # Program to check if the input number is odd or even.
 # A number is even if division by 2 give a remainder of 0.
 # If remainder is 1, it is odd.
+
 num = as.integer(readline(prompt="Enter a number: "))
 if((num %% 2) == 0) {
 print(paste(num))
 else {
 print(paste(num))
- }
-  
+}
 
 ```
 
@@ -238,6 +237,7 @@ Throughout the SWNC R training Series, we have frequently reused code examples f
 library(janitor)
 groceries_clean <- groceries %>%
   clean_names()
+
 ```
 
 
@@ -255,12 +255,13 @@ Similarly, using iteration and creating your own functions are key in optimizing
 
 ### Bonus Tool: Take breaks and have fun !!!
 
-Code can get annoying at times so remember to take the time to release frustration through breaks! When's the last time you went on a walk or had a snack? Thank your brain and give it a moment to refresh before diving back into your code - often this will lead to new insights when you're stuck on a problem. the nice thing about coding is theres many ways to accomplish the same task so if all else fails take a break and try a new approach!! :)
+Code can get annoying at times so remember to take the time to release frustration through breaks! When's the last time you went on a walk or had a snack? Thank your brain and give it a moment to refresh before diving back into your code - often this will lead to new insights when you're stuck on a problem. The nice thing about coding is there's many ways to accomplish the same task so if all else fails take a break and try a new approach!! :)
 
 
-Amazing work! We've built our toolbelt of success and are ready to start coding! 
+Amazing work! We've built our tool belt of success and are ready to start coding! 
 ![](images/RobTheBuilder.jpg) 
 [image adapted from bob the builder graphic](https://img.favpng.com/8/17/8/bob-the-builder-dizzy-portable-network-graphics-image-roley-png-favpng-1d54cphjKTPiME4x9AgiCh6N6.jpg)
+
 ## 4. Problem Solving Workflow 
 
 ### *"Where do I even begin?!?"*

@@ -175,7 +175,8 @@ library(tidyr)
 
 ```{r}
 #unite the track and artist columns in the billboard data set using " by " as the separator  
-
+unite(billboard, "combined", "track","artist", sep="by")
+billboard <- billboard
 ```
 
 
@@ -201,9 +202,9 @@ The next task is for those who have had experience using GitHub. If you haven't 
 # If remainder is 1, it is odd.
 num = as.integer(readline(prompt="Enter a number: "))
 if((num %% 2) == 0) {
-print(paste(num))
+print(paste(num, "is even"))
 else {
-print(paste(num))
+print(paste(num, "is odd"))
  }
   
 

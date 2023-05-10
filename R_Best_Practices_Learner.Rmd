@@ -163,7 +163,7 @@ Remember that R is open source, so there loads of documentation out there for yo
 
 Even better, R also has its own [documentation](https://www.rdocumentation.org/) on the packages on its server. This can also be accessed using the ? and ?? in the console (bottom left), or the 'Packages' and 'Help' tabs (bottom right). 
 
-Let's explore the 'CreatePackageReport' function in the 'pkgnet' package 
+
 
 **To Do**: Install and load the 'tidyr' package if you don't have it already
 ```{r, pkginstall}
@@ -175,6 +175,8 @@ library(tidyr)
 
 ```{r}
 #unite the track and artist columns in the billboard data set using " by " as the separator  
+
+answer <- unite(billboard, "TrackArtist", track:artist, sep = " by ")
 
 ```
 
@@ -201,10 +203,10 @@ The next task is for those who have had experience using GitHub. If you haven't 
 # If remainder is 1, it is odd.
 num = as.integer(readline(prompt="Enter a number: "))
 if((num %% 2) == 0) {
-print(paste(num))
-else {
-print(paste(num))
- }
+print(paste(num,"is Even"))
+} else {
+print(paste(num,"is Odd"))
+}
   
 
 ```
@@ -222,10 +224,12 @@ Use variable names that are concise, consistent, unique, and have meaning. Your 
 **To Do**: Rename the column names in the following data frame 
 ```{r}
 groceries<- data.frame(
-  FOOD.NAMES=c("potatos", "cereal", "milk"),
-  money.well.spent=c(1.5, 3.40, 3.59),
-  StoreBoughtFrom=c("Safeway", "TraderJoes", "Walmart")
+  Food=c("potatos", "cereal", "milk"),
+  Price=c(1.5, 3.40, 3.59),
+  Store=c("Safeway", "TraderJoes", "Walmart")
 )
+
+
 ```
 
 
@@ -261,6 +265,7 @@ Code can get annoying at times so remember to take the time to release frustrati
 Amazing work! We've built our toolbelt of success and are ready to start coding! 
 ![](images/RobTheBuilder.jpg) 
 [image adapted from bob the builder graphic](https://img.favpng.com/8/17/8/bob-the-builder-dizzy-portable-network-graphics-image-roley-png-favpng-1d54cphjKTPiME4x9AgiCh6N6.jpg)
+
 ## 4. Problem Solving Workflow 
 
 ### *"Where do I even begin?!?"*
@@ -414,3 +419,5 @@ Congrats you've reached the end!!! Starting is always the hardest, but hopefully
 * [even vs odd](https://www.datamentor.io/r-programming/examples/odd-even/)
 * [Troubleshooting](https://jillymackay.github.io/RatRDSVS/trouble.html)
 * [building functions](https://setscholars.net/beginners-guide-to-r-r-functions/)
+
+make changes so that it will push.
